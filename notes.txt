@@ -1,0 +1,33 @@
+Generell: vue, vuetify, local storage (PWA), einige Jests, ansprechendes Layout/Design
+
+Entität ToDo:
+ - GUID
+ - Titel
+ - Done
+ - Timestamp?
+ / Create -> Titel (Done=false)
+ / Delete -> GUID
+ / markDone -> GUID
+ 
+Funktionen:
+ calcDonePercentage
+
+
+
+UX:
+ Liste mit ToDos
+  - % Anzeige oben mitte
+  - leerzeile (+ Button)
+  - existierenden mit Checkbox und delete button
+
+Vorgehen:
+ 1. Vue setup mit Components grobem Layout
+ 2. Store und interfaces definieren
+ 3. Unit tests
+ 4. local storage
+ 5. Polish
+
+
+  
+
+ 
