@@ -17,9 +17,21 @@
       +
       </v-btn>
     </div>
-
+    <div class="header">
+      <div class="title-head">
+        ToDo
+      </div>
+      <div class="done-head">
+        Done
+      </div>
+      <div class="delete-head">
+        Delete
+      </div>
+    </div>
     <div v-for="todo in getTodos()" :key="todo.id" class="list">
-      {{ todo.title }}
+      <div class="title">
+        {{ todo.title }}
+      </div>
       <v-checkbox
         :value="todo.done"
         @click="checkDone(todo.id)"
@@ -27,6 +39,8 @@
       </v-checkbox>
       <v-btn
         outlined
+        height=25
+        width=25
         @click=deleteTodo
       >
        X
@@ -81,9 +95,25 @@ export default class ToDoList extends Vue {
   .creation {
     display: flex;
   }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: black 2px solid;
+    padding: 10px;
+    font-weight: bold;
+  }
   .list {
     display: flex;
     justify-content: space-between;
-    height: px;
+    height: 40px;
+    padding: 10px;
+    border-bottom: grey 1px solid;
+    .v-btn {
+      min-width: 25px!important;
+    }
+    .v-input--selection-controls{
+      padding: 0!important;
+      margin: 0!important;
+    }
   }
 </style>

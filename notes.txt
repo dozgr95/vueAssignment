@@ -12,8 +12,6 @@ Entität ToDo:
 Funktionen:
  calcDonePercentage
 
-
-
 UX:
  Liste mit ToDos
   - % Anzeige oben mitte
@@ -27,7 +25,16 @@ Vorgehen:
  4. local storage
  5. Polish
 
-
+Arbeitsjournal:
+ 10.12: 2h => aufgesetzt schnell, design zeit verloren, store schnell (ohne unit tests)
+ 11.12: 45min => unit tests und store in komponente nutzen
+	30min bischen polish (v-data-table und icons probleme)
+	30min local storage schnell
+	30min done computed/reactive -> v-model
+	15min polish
+ 
+ 
+ 
   
 
  
