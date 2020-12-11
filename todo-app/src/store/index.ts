@@ -29,16 +29,26 @@ export const getters = {
 };
 
 export const mutations = {
-  createToDo(state: AppState, todo: Todo) {
+  createTodo(state: AppState, title: string) {
+    const todo: Todo = {
+      id: Guid.create().toString(),
+      title,
+      done: false,
+    };
     state.todos.push(todo);
   },
-  deleteToDo(state: AppState, id: string) {
+  deleteTodo(state: AppState, id: string) {
     const itemId = state.todos.findIndex((todo) => todo.id === id);
     state.todos.splice(itemId, 1);
   },
-  markAsDone(state: AppState, id: string) {
+  setDone(state: AppState, id: string) {
+    console.log(state);
     const itemId = state.todos.findIndex((todo) => todo.id === id);
-    state.todos[itemId].done = true;
+    if (itemId > -1) {
+      const todo = state.todos[itemId];
+      todo.done = !todo.done;
+      Object.assign(state.todos[itemId], todo);
+    }
   },
   saveLoadedTodos(state: AppState, todos: Todo[]) {
     state.todos = todos;
@@ -51,13 +61,7 @@ export const actions = {
     const todos: Todo[] = storage ? JSON.parse(storage) : [];
     commit('saveLoadedTodos', todos);
   },
-  addTodo({ state, commit }: {state: AppState; commit: Function}, title: string) {
-    const todo: Todo = {
-      id: Guid.create().toString(),
-      title,
-      done: false,
-    };
-    commit('createToDo', todo);
+  updateStorage({ state }: {state: AppState; commit: Function}) {
     localStorage.setItem('vue-app-todos', JSON.stringify(state.todos));
   },
 };
