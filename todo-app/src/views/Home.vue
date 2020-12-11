@@ -19,7 +19,11 @@ import Percentage from './ToDoList.vue';
     Percentage,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  public mounted() {
+    this.$store.dispatch('loadStorage');
+  }
+}
 </script>
 
 <style lang="scss" scoped>
