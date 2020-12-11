@@ -2,10 +2,10 @@
   <div class="percentage">
     <h3>Done:</h3>
     <v-progress-linear
-      value="getDonePercentage()"
+      value="getDonePercentage"
       height="25"
     >
-      <strong>{{ Math.ceil(getDonePercentage()) }}%</strong>
+      <strong>{{ Math.ceil(getDonePercentage)}}%</strong>
     </v-progress-linear>
   </div>
 </template>
@@ -19,7 +19,7 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 export default class Percentage extends Vue {
-  public getDonePercentage() {
+  public get getDonePercentage() {
     return this.$store.getters.donePercentage;
   }
 }
