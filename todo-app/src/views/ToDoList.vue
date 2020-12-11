@@ -21,7 +21,7 @@
     <div v-for="todo in getTodos()" :key="todo.id" class="list">
       {{ todo.title }}
       <v-checkbox
-        value="todo.done"
+        :value="todo.done"
         @click="checkDone(todo.id)"
       >
       </v-checkbox>
