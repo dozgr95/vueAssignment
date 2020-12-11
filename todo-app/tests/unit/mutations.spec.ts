@@ -8,8 +8,8 @@ describe('mutation setDone', () => {
       todos: [
         {
           id: 'first',
-          done: false
-        } as Todo
+          done: false,
+        } as Todo,
       ],
     };
     setDone(state, 'first');
@@ -20,8 +20,8 @@ describe('mutation setDone', () => {
       todos: [
         {
           id: 'first',
-          done: true
-        } as Todo
+          done: true,
+        } as Todo,
       ],
     };
     setDone(state, 'first');

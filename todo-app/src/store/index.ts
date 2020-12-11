@@ -42,7 +42,6 @@ export const mutations = {
     state.todos.splice(itemId, 1);
   },
   setDone(state: AppState, id: string) {
-    console.log(state);
     const itemId = state.todos.findIndex((todo) => todo.id === id);
     if (itemId > -1) {
       const todo = state.todos[itemId];
